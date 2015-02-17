@@ -1,0 +1,45 @@
+object Form24: TForm24
+  Left = 0
+  Top = 0
+  Caption = 'Form24'
+  ClientHeight = 426
+  ClientWidth = 681
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ListView1: TListView
+    Left = 0
+    Top = 0
+    Width = 177
+    Height = 426
+    Align = alLeft
+    Columns = <>
+    TabOrder = 0
+    ViewStyle = vsList
+    OnChange = ListView1Change
+  end
+  object RichEdit1: TRichEdit
+    Left = 177
+    Top = 0
+    Width = 504
+    Height = 426
+    Align = alClient
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 1
+    Zoom = 100
+  end
+end

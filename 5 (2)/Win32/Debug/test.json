@@ -1,0 +1,20 @@
+[
+    {
+        "caption":"First doc",
+        "path":"first.txt",
+        "children":[
+            {
+                "caption":"First subdoc",
+                "path":"first-sub.txt"
+            },
+            {
+                "caption":"Second subdoc",
+                "path":"second-sub.txt"
+            }
+        ]
+    },
+    {
+        "caption":"Second doc",
+        "path":"second.txt"
+    }
+]

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2015.02.16 09:42:35.192,=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
-    <Transaction>2015.02.16 09:43:47.138,C:\Users\NotIntMan\Desktop\КОЗадание\1\MainForm.dfm=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.dfm</Transaction>
-    <Transaction>2015.02.16 09:43:47.138,C:\Users\NotIntMan\Desktop\КОЗадание\1\MainForm.pas=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
-    <Transaction>2015.02.16 09:43:51.752,C:\Users\NotIntMan\Desktop\КОЗадание\1\Calc.dproj=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.138,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.pas=C:\Users\NotIntMan\Desktop\КОЗадание\1\MainForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.752,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Project3.dproj=C:\Users\NotIntMan\Desktop\КОЗадание\1\Calc.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.138,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.dfm=C:\Users\NotIntMan\Desktop\КОЗадание\1\MainForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.192,=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -32,7 +32,7 @@ implementation
 
 procedure TForm22.Button1Click(Sender: TObject);
 begin
-  if FontD.Execute then Button2.Enabled:=true;
+  Button2.Enabled:=FontD.Execute;
 end;
 
 procedure TForm22.Button2Click(Sender: TObject);

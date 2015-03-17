@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+button {
+    transition: 1s;
+    padding: 5px;
+    box-shadow: 5px 5px #000;
+}
+button.active {
+    margin-top: 3px;
+    margin-left: 3px;
+    box-shadow: 2px 2px #000;
+}
+
+#player {
+    display: none;
+    margin: 10px auto;
+}
+</style>
+<script>
+function delay(time) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve,time);
+    });
+};
+function clickBtn(event) {
+    try {
+        var classList=event.target.classList;
+        if (!classList.contains('_a')) {
+            classList.add('active');
+            classList.add('_a');
+            delay(1000).then(function() {
+                classList.remove('active');
+                return delay(1000);
+            }).then(function() {
+                classList.remove('_a');
+                document.getElementById('player').style.display='block';
+            });
+        };
+    } catch(e) {
+        document.getElementById('player').style.display='block';
+    };
+};
+</script>
+</head>
+<body>
+<button onclick="clickBtn(event)">НАЖМИ НА МЕНЯ!</button>
+<video id="player" width="800" height="450" controls="controls">
+    <source src="6-video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <b>Формат MP4 не поддерживается вашим браузером.</b>
+</video>
+</body>
+</html>

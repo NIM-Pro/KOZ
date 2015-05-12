@@ -65,7 +65,7 @@ var text:string;
 begin
   Text:=Edit1.Text;
   Text:=Text+TButton(Sender).Caption;
-  while (text[1]='0') and (text[2]<>',') do
+  while (text[1]='0') and (text[2]<>',') and (length(text)>1) do
     delete(text,1,1);
   Edit1.Text:=Text;
 end;

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2015.02.27 08:28:42.373,=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
-    <Transaction>2015.02.27 08:48:55.690,C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Project4.dproj=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Project4.dproj</Transaction>
-    <Transaction>2015.02.27 08:49:05.533,C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Unit8.dfm=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.dfm</Transaction>
-    <Transaction>2015.02.27 08:49:05.533,C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Unit8.pas=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.690,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Project4.dproj=C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Project4.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.dfm=C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Unit8.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.373,=C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,C:\Users\NotIntMan\Documents\Embarcadero\Studio\Projects\Unit8.pas=C:\Users\NotIntMan\Documents\GitHub\KOZ\7 (2)\Unit8.pas</Transaction>
   </Transactions>
 </BorlandProject>

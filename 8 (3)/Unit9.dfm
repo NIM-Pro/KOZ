@@ -23,10 +23,6 @@ object Form9: TForm9
     ItemHeight = 13
     TabOrder = 0
     OnClick = ListBox1Click
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 121
-    ExplicitHeight = 97
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 

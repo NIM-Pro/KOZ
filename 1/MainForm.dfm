@@ -33,9 +33,6 @@ object FMainForm: TFMainForm
     ReadOnly = True
     TabOrder = 0
     Text = '0'
-    ExplicitLeft = 96
-    ExplicitTop = 72
-    ExplicitWidth = 121
   end
   object Button1: TButton
     Left = 16

@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uLkJSON, Vcl.StdCtrls, Vcl.ComCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uLkJSON, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.OleCtrls, SHDocVw, math;
 
 type
   Item = class
@@ -14,15 +15,17 @@ type
   end;
   TForm5 = class(TForm)
     TreeView1: TTreeView;
-    RichEdit1: TRichEdit;
+    WebBrowser1: TWebBrowser;
     procedure FormCreate(Sender: TObject);
     procedure TreeView1Change(Sender: TObject; Node: TTreeNode);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     ItemList:array of Item;
     currentNode:TTreeNode;
+    canILoad:boolean;
     function newItem(i:Item):Item;
     procedure tree(obj:TlkJSONbase;node:TTreeNode);
     procedure treeCh(obj:TlkJSONbase;node:TTreeNode);
@@ -88,11 +91,12 @@ end;
 procedure TForm5.TreeView1Change(Sender: TObject; Node: TTreeNode);
 var i:Item;
 begin
-  if currentNode<>Node then begin
+  if (currentNode<>Node) and canILoad then begin
     currentNode:=Node;
     i:=findItem(Node);
-    if i<>nil then
-      RichEdit1.Lines.LoadFromFile(i.path);
+    if i<>nil then begin
+      WebBrowser1.Navigate('file:///'+ExtractFilePath(Application.ExeName)+i.path);
+    end;
   end;
 end;
 
@@ -110,12 +114,19 @@ end;
 procedure TForm5.FormCreate(Sender: TObject);
 var text:TStringStream; res:TlkJSONbase; i:integer;
 begin
+  canILoad:=false;
   currentNode:=nil;
   text:=TStringStream.Create;
-  text.loadFromFile('test.json');
+  text.loadFromFile('documents.json');
   res:=TlkJSON.ParseText(text.DataString);
   for i:=0 to res.Count-1 do
     tree(res.Child[i],nil);
+  canILoad:=true;
+end;
+
+procedure TForm5.FormResize(Sender: TObject);
+begin
+  //TreeView1.Width:=floor(Form5.ClientWidth/4);
 end;
 
 end.

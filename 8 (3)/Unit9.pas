@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.OleCtnrs, Data.DB, Data.Win.ADODB,
-  Vcl.StdCtrls, Excel2010, comobj;
+  Vcl.StdCtrls, comobj;
 
 type
   TForm9 = class(TForm)
@@ -20,8 +20,6 @@ type
   public
     { Public declarations }
     function getTableName:string;
-    function ColToText(aCol: integer): string;
-    function CellToRange(aRow, aCol: integer): string;
   end;
 
 var
@@ -54,49 +52,32 @@ begin
 end;
 
 procedure TForm9.ListBox1Click(Sender: TObject);
-var i:integer;
+var i,j:integer;
 table:string;
-sheet:variant;
-//sheet:_Worksheet;
+ExcelApp, sheet: Variant;
 begin
   table:=getTableName;
-  showmessage(Table);
   if (length(table)>0) then begin
-    ADOQUery1.SQL.Text:='SELECT * FROM '+getTableName;
+    ADOQUery1.SQL.Text:='SELECT * FROM '+table;
     ADOQuery1.Open;
-    ListBox1.Visible:=false;
-    sheet:=CreateOLEObject('Excel.Application');
-    sheet.visible:=true;
-    sheet:=sheet.WorkBooks.Add;
-    sheet:=sheet.ActiveSheet;
-    for i:=0 to ADOQuery1.FieldCount-1 do
-      sheet.Range[CellToRange(1,i)].Value:=ADOQuery1.FieldList.Fields[i].Name;
-      //sheet.Get_Range(CellToRange(1,i)).Value2:=ADOQuery1.FieldList.Fields[i].Name;
+    ExcelApp := CreateOleObject('Excel.Application');
+    ExcelApp.Visible := False;
+    sheet:=ExcelApp.WorkBooks.Add(-4167);
+    sheet:=sheet.WorkSheets[1];
+    sheet.name := 'Export';
+    for i:=1 to ADOQuery1.FieldCount do
+      sheet.Cells[1,i]:=ADOQuery1.FieldList.Fields[i-1].FieldName;
+    j:=2;
+    while not ADOQuery1.Eof do begin
+      for i:=1 to ADOQuery1.FieldCount do
+        sheet.Cells[j,i]:=ADOQuery1.FieldList.Fields[i-1].AsString;
+      ADOQuery1.Next;
+      inc(j);
+    end;
+    ADOQuery1.Close;
+    ExcelApp.Visible := true;
+    Close;
   end;
-end;
-
-function TForm9.ColToText(aCol: integer): string;
-var
-  d,m:integer;
-begin
-  result:='';
-  if aCol<=0 then exit;
-
-
-  aCol:=aCol-1;
-  d:=aCol div 26;
-  m:=aCol mod 26;
-  result:=Char(ord('A')+m);
-  if d>0 then
-  begin
-    result:=Char(ord('A')+d-1)+result;
-  end;
-end;
-
-function TForm9.CellToRange(aRow, aCol: integer): string;
-begin
-  result:='';
-  result:=ColToText(aCol)+IntToStr(aRow);
 end;
 
 end.
